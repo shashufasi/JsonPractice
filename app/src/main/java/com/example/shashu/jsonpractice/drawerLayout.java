@@ -6,9 +6,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class drawerLayout extends AppCompatActivity {
+
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,11 @@ public class drawerLayout extends AppCompatActivity {
                 break;
             case R.id.nav_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,new home_fragment()).commit();
+                break;
+            case R.id.nav_trailers:
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,new trailer_fragment()).commit();
+
                 break;
         }
         menuItem.setChecked(true);

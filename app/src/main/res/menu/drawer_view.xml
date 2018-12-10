@@ -21,8 +21,8 @@
             android:title="Stories"
             />
         <item
-            android:id="@+id/nav_about"
-            android:title="About Us"
+            android:id="@+id/nav_trailers"
+            android:title="Trailers"
             />
     </group>
 

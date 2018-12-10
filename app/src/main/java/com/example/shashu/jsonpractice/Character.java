@@ -4,7 +4,7 @@ package com.example.shashu.jsonpractice;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CaptainAmerica {
+public class Character {
 
     @SerializedName("code")
     @Expose

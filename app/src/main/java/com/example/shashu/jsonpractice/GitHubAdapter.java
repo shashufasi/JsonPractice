@@ -45,7 +45,7 @@ public class GitHubAdapter extends RecyclerView.Adapter<GitHubAdapter.GitHubView
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, user.getName() + " was clicked", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(context, adapter_character_bio.class);
+                Intent i = new Intent(context, Adapter_Character_Bio.class);
                 i.putExtra("description", user.getDescription());
                 i.putExtra("name", user.getName());
                 i.putExtra("thumbnail", user.getThumbnail().getPath() + "/" + "portrait_medium" + "." + user.getThumbnail().getExtension());

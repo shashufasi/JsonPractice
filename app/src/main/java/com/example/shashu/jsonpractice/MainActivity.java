@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 //        Intent i=getIntent();
 //        bio.setName(i.getExtras().getString("name"));
 //        bio.setDescription(i.getExtras().getString("description"));
-//        bio.setThumbnail(i.getExtras().getString("thumbnail"));
+//        bio.setTrailer_thumbnail(i.getExtras().getString("thumbnail"));
 //        r.setLayoutManager(new LinearLayoutManager(this));
 //        r.setAdapter(new adapter_character_bio(MainActivity.this,bio));
 //}

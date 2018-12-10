@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 
-public class adapter_character_bio extends AppCompatActivity {
+public class Adapter_Character_Bio extends AppCompatActivity {
     TextView character_bio_name;
     TextView description;
     ImageView character_bio_img;
