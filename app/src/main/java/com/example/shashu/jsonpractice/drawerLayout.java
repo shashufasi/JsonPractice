@@ -17,6 +17,7 @@ public class drawerLayout extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_drawer_layout);
@@ -32,16 +33,16 @@ public class drawerLayout extends AppCompatActivity {
 //                return true;
 //            }
 //        });
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,new home_fragment()).commit();
-        actionBarDrawerToggle=new ActionBarDrawerToggle(this,mDrawerLayout,R.string.open,R.string.close);
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new home_fragment()).commit();
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
         mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setupDrawerContent(navigationView);
 
     }
-    private void setupDrawerContent(NavigationView navigationView)
-    {
+
+    private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -50,28 +51,30 @@ public class drawerLayout extends AppCompatActivity {
             }
         });
     }
+
     public void selectedItemDrawer(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_characters:
-                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,new characters_fragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new characters_fragment()).commit();
                 break;
             case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,new home_fragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new home_fragment()).commit();
                 break;
             case R.id.nav_trailers:
-
-                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,new trailer_fragment()).commit();
-
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new trailer_fragment()).commit();
+                break;
+            case R.id.nav_comics:
+                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,new comics_fragment()).commit();
                 break;
         }
         menuItem.setChecked(true);
         setTitle(menuItem.getTitle());
         mDrawerLayout.closeDrawers();
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(actionBarDrawerToggle.onOptionsItemSelected(item))
-        {
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
         return super.onOptionsItemSelected(item);

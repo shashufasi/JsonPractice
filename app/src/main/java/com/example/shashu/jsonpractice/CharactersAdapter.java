@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +17,12 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class GitHubAdapter extends RecyclerView.Adapter<GitHubAdapter.GitHubViewHolder> {
+public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.GitHubViewHolder> {
 
     private List<Result> data;
     private Context context;
 
-    public GitHubAdapter(Context context, List<Result> data) {
+    public CharactersAdapter(Context context, List<Result> data) {
         this.context = context;
         this.data = data;
     }
@@ -37,7 +38,7 @@ public class GitHubAdapter extends RecyclerView.Adapter<GitHubAdapter.GitHubView
     @Override
     public void onBindViewHolder(@NonNull GitHubViewHolder gitHubViewHolder, int i) {
         final Result user = data.get(i);
-        //  List<Result> results=user.getResults();
+        //  List<ResultComics> results=user.getResults();
         gitHubViewHolder.txtView.setText(user.getName());
         String thumbnail = user.getThumbnail().getPath() + "/" + "portrait_medium" + "." + user.getThumbnail().getExtension();
         Glide.with(gitHubViewHolder.imgView.getContext()).load(thumbnail).into(gitHubViewHolder.imgView);
@@ -45,10 +46,11 @@ public class GitHubAdapter extends RecyclerView.Adapter<GitHubAdapter.GitHubView
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, user.getName() + " was clicked", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(context, Adapter_Character_Bio.class);
+                Intent i = new Intent(context, Character_Bio.class);
                 i.putExtra("description", user.getDescription());
                 i.putExtra("name", user.getName());
-                i.putExtra("thumbnail", user.getThumbnail().getPath() + "/" + "portrait_medium" + "." + user.getThumbnail().getExtension());
+              //  Log.d("Path:",user.getThumbnail().getPath() + "/" + "portrait_medium" + "." + user.getThumbnail().getExtension());
+                i.putExtra("thumbnail", user.getThumbnail().getPath() /*+ "/" + "portrait_medium"*/ + "." + user.getThumbnail().getExtension());
                 context.startActivity(i);
             }
         });

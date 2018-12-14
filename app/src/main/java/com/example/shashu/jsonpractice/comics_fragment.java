@@ -1,18 +1,19 @@
 package com.example.shashu.jsonpractice;
 
 import android.content.Context;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,26 +32,23 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
-
-public class characters_fragment extends Fragment {
-
+public class comics_fragment extends Fragment {
     private String privateKey = "aa2d591e334216929c7327f1d67fbb54ef3764dd";
     private String publicKey = "786adba4e64313dcd2028940b28c2e34";
     long timestamp;
     private static String URL = "";
     String hashed;
-     private EditText txtCharacter;
+    private EditText txtComicsSearch;
     Context context;
-    private Button btnSearch;
-
+    private Button btnComicsSearch;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         context=getContext();
-        final View rootView = inflater.inflate(R.layout.fragment_characters_fragment, null);
-        txtCharacter = (EditText)rootView.findViewById(R.id.txtCharacter);
-        btnSearch = rootView.findViewById(R.id.btnSearch);
+       final View rootView=inflater.inflate(R.layout.fragment_comics_fragment,null);
+       txtComicsSearch=rootView.findViewById(R.id.txtComicsSearch);
+       btnComicsSearch=rootView.findViewById(R.id.btnComicsSearch);
         String ts;
         timestamp = System.currentTimeMillis();
         ts = String.valueOf(timestamp);
@@ -60,18 +58,20 @@ public class characters_fragment extends Fragment {
             e.printStackTrace();
         }
         // int limit = 5;
-        btnSearch.setOnClickListener(new View.OnClickListener() {
+        btnComicsSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(txtCharacter.getWindowToken(), 0);
+                imm.hideSoftInputFromWindow(txtComicsSearch.getWindowToken(), 0);
                 //txtCharacter.onEditorAction(EditorInfo.IME_ACTION_DONE);
-                String searchedName = txtCharacter.getText().toString();
-                Log.v("EditText",searchedName);
-             System.out.print(searchedName);
-                final RecyclerView userList = rootView.findViewById(R.id.character_recycler);
+                String searchedName = txtComicsSearch.getText().toString();
+             //   Log.v("EditText",searchedName);
+              //  System.out.print(searchedName);
+                final RecyclerView userList = rootView.findViewById(R.id.comics_recycler);
                 userList.setLayoutManager(new LinearLayoutManager(getActivity()));
-                URL = String.format("https://gateway.marvel.com:443/v1/public/characters?ts=%d&apikey=%s&hash=%s&nameStartsWith=%s&limit=100", timestamp, publicKey, hashed ,searchedName);
+                URL = String.format("https://gateway.marvel.com:443/v1/public/comics?ts=%d&apikey=%s&hash=%s&titleStartsWith=%s", timestamp, publicKey, hashed ,searchedName);
+              //  URL = String.format("https://gateway.marvel.com:443/v1/public/characters?ts=%d&apikey=%s&hash=%s&nameStartsWith=%s&limit=100", timestamp, publicKey, hashed ,searchedName);
                 Log.v("URL",URL);
+                //https://gateway.marvel.com:443/v1/public/comics?ts=%d&apikey=%s&hash=%s&titleStartsWith=%s,timestamp,publicKey,hashed,searchedName
                 // URL = String.format("https://gateway.marvel.com:443/v1/public/characters/1009268?ts=%d&apikey=%s&hash=%s", timestamp, publicKey, hashed);
                 StringRequest request = new StringRequest(URL, new Response.Listener<String>() {
                     @Override
@@ -81,11 +81,11 @@ public class characters_fragment extends Fragment {
 
                         GsonBuilder gsonB = new GsonBuilder();
                         Gson gs = gsonB.create();
-                        Character item = gs.fromJson(response, Character.class);
-                        Data marvelData = item.getData();
-                        List<Result> users = marvelData.getResults();
+                        ComicsData item = gs.fromJson(response, ComicsData.class);
+                       DataComics marvelData = item.getData();
+                        List<ResultComics> users = marvelData.getResults();
                         //  List<ResultComics>user=users.getResults();
-                        userList.setAdapter(new CharactersAdapter(getActivity(), users));
+                        userList.setAdapter(new ComicsAdapter(getActivity(), users));
                     }
                 }, new Response.ErrorListener() {
                     @Override
@@ -114,6 +114,7 @@ public class characters_fragment extends Fragment {
         System.out.println(sb.toString());
         return sb.toString();
     }
+
 
 
 }

@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 //Data marvelData=item.getData();
 //List<Result> users=marvelData.getResults();
 //              //  List<Result>user=users.getResults();
-//                userList.setAdapter(new GitHubAdapter(MainActivity.this, users));
+//                userList.setAdapter(new CharactersAdapter(MainActivity.this, users));
 //            }
 //        }, new Response.ErrorListener() {
 //            @Override

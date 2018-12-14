@@ -16,10 +16,7 @@
             android:id="@+id/nav_comics"
             android:title="Comics"
             />
-        <item
-            android:id="@+id/nav_Stories"
-            android:title="Stories"
-            />
+
         <item
             android:id="@+id/nav_trailers"
             android:title="Trailers"

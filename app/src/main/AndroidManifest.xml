@@ -19,8 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Adapter_Character_Bio" />
-        <activity android:name=".TrailerActivity"></activity>
+        <activity android:name=".Character_Bio" />
+        <activity android:name=".TrailerActivity" />
+        <activity android:name=".ComicsInfo"></activity>
     </application>
 
 </manifest>
