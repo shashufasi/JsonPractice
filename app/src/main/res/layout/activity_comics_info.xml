@@ -15,32 +15,62 @@
             android:id="@+id/imgComicInfoThumbnail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
+        <TextView
+            android:id="@+id/txtComicInfoTitleHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            />
         <TextView
             android:id="@+id/txtComicInfoTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
+        <TextView
+            android:id="@+id/txtComicInfoIsbnHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            />
         <TextView
             android:id="@+id/txtComicInfoIsbn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
+        <TextView
+            android:id="@+id/txtComicInfoModifiedHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            />
         <TextView
             android:id="@+id/txtComicInfoModified"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
+        <TextView
+            android:id="@+id/txtComicInfoPagesCountHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            />
         <TextView
             android:id="@+id/txtComicInfoPagesCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
+        <TextView
+            android:id="@+id/txtComicInfoPriceHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            />
         <TextView
             android:id="@+id/txtComicInfoPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
+        <TextView
+            android:id="@+id/txtComicInfoDescriptionHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            />
         <TextView
             android:id="@+id/txtComicInfoDescription"
             android:layout_width="wrap_content"
