@@ -37,11 +37,14 @@ public class Adapter_Trailers extends RecyclerView.Adapter<Adapter_Trailers.Trai
         Trailer_Characters characters = trailer_characters.get(i);
         trailers_viewHolder.trailer_name.setText(characters.getTrailer_name());
         trailers_viewHolder.trailer_thumbnail.setImageResource(characters.getTrailer_thumbnail());
+     //getting trailer name in t_name...
+        final String t_name=trailers_viewHolder.trailer_name.getText().toString();
         trailers_viewHolder.itemView.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view)
             {
                 Toast.makeText(context,"Trailer Opening...",Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(context,TrailerActivity.class);
+                intent.putExtra("trailer_name",t_name);
                 context.startActivity(intent);
             }
         });

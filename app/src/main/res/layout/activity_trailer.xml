@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".TrailerActivity"
     android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/avengers"
     >
 
     <view
@@ -16,8 +18,7 @@
     <Button
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-
-        android:layout_width="270dp"
+        android:layout_width="150dp"
         android:layout_height="60dp"
         android:background="@drawable/buttonshape"
         android:shadowColor="#A8A8A8"
@@ -26,5 +27,6 @@
         android:shadowRadius="5"
         android:text="Play"
         android:id="@+id/btnPlay"
+        android:layout_gravity="center"
         />
 </LinearLayout>
