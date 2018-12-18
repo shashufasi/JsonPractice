@@ -40,7 +40,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Gi
         final Result user = data.get(i);
         //  List<ResultComics> results=user.getResults();
         gitHubViewHolder.txtView.setText(user.getName());
-        String thumbnail = user.getThumbnail().getPath() + "/" + "portrait_medium" + "." + user.getThumbnail().getExtension();
+        String thumbnail = user.getThumbnail().getPath() +/* "/" + "portrait_medium" +*/ "." + user.getThumbnail().getExtension();
         Glide.with(gitHubViewHolder.imgView.getContext()).load(thumbnail).into(gitHubViewHolder.imgView);
         gitHubViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

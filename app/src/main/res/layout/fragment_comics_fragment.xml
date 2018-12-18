@@ -4,13 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".comics_fragment">
+    tools:context=".comics_fragment"
+    android:background="@drawable/avengers_wallpaper"
+    >
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtComicsSearch"
        android:hint="Enter Comics Name"
+        android:textColor="#000"
+        android:textStyle="bold"
+
         />
     <Button
         android:layout_width="match_parent"
