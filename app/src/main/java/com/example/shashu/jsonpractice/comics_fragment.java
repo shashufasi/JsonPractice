@@ -70,7 +70,7 @@ public class comics_fragment extends Fragment {
                 userList.setLayoutManager(new LinearLayoutManager(getActivity()));
                 URL = String.format("https://gateway.marvel.com:443/v1/public/comics?ts=%d&apikey=%s&hash=%s&titleStartsWith=%s", timestamp, publicKey, hashed ,searchedName);
               //  URL = String.format("https://gateway.marvel.com:443/v1/public/characters?ts=%d&apikey=%s&hash=%s&nameStartsWith=%s&limit=100", timestamp, publicKey, hashed ,searchedName);
-                Log.v("URL",URL);
+             //   Log.v("URL",URL);
                 //https://gateway.marvel.com:443/v1/public/comics?ts=%d&apikey=%s&hash=%s&titleStartsWith=%s,timestamp,publicKey,hashed,searchedName
                 // URL = String.format("https://gateway.marvel.com:443/v1/public/characters/1009268?ts=%d&apikey=%s&hash=%s", timestamp, publicKey, hashed);
                 StringRequest request = new StringRequest(URL, new Response.Listener<String>() {

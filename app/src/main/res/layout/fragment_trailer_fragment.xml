@@ -3,23 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".trailer_fragment"
+    android:background="#2D2D2D"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    >
+    tools:context=".trailer_fragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MCU MOVIES TRAILERS"
+        android:text="MARVEL MOVIES TRAILERS"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-
-        />
+        android:textColor="#fff"
+        android:textStyle="bold" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/trailer_recycler"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     </android.support.v7.widget.RecyclerView>
 </LinearLayout>

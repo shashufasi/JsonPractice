@@ -23,16 +23,7 @@ public class drawerLayout extends AppCompatActivity {
         setContentView(R.layout.main_drawer_layout);
         mDrawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-//        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
-//            public boolean onNavigationItemSelected(MenuItem menuItem)
-//            {
-//                //set item as selected to persist higlight
-//                menuItem.setChecked(true);
-//                //close drawer when item is tapped;
-//                mDrawerLayout.closeDrawers();
-//                return true;
-//            }
-//        });
+
         getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new home_fragment()).commit();
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
         mDrawerLayout.addDrawerListener(actionBarDrawerToggle);
